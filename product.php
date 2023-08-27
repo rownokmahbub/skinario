@@ -3,7 +3,7 @@ include("./dbconf.php");
 $query = "SELECT * FROM products WHERE category='product'";
 if (isset($_GET['type']) && $_GET['type'] != 'null') {
   $type = $_GET['type'];
-  $query .= " WHERE type like '%$type%'";
+  $query .= " AND  type like '%$type%'";
 }
 $result = mysqli_query($con, $query);
 
